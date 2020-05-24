@@ -1,16 +1,25 @@
 # react-lgmt-input
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+```js
+import CommonInput from './_CommonInput';
 
-Describe react-lgmt-input here.
+export default class MeuInput extends CommonInput {
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+  masksRegex = /(^(\d)+$)/g;
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+  masksReplacement = ["$2"];
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+  length = 10;
+
+  pattern = /^\d{1,10}$/;
+
+  invalidMessage = "Número informado é inválido.";
+
+  validator: () => {
+    if(this.state.value)
+      return true;
+    return false;
+  }
+
+}
+```
