@@ -1,5 +1,5 @@
 {
-  "name": "react-lgmt-input",
+  "name": "@logicamente.info/react-lgmt-input",
   "version": "1.0.0",
   "description": "react-lgmt-input React component",
   "main": "lib/index.js",
@@ -30,11 +30,17 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Logicamente Info",
+  "homepage": "https://logicamente.info",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LogicamenteInfo/react-lgmt-input"
+  },
   "keywords": [
-    "react-component"
+    "react component",
+    "input",
+    "mascara",
+    "validacao"
   ]
 }
