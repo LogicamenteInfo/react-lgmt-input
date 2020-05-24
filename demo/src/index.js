@@ -13,6 +13,7 @@ export default class Demo extends Component {
       <form>
         <label><b>Agência</b></label>
         <LgmtInput.AgenciaBancaria
+          className="class--test"
           value={this.state.agencia}
           onChange={(agencia) => this.setState({ agencia })}
         />

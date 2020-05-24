@@ -4,13 +4,11 @@ import PropTypes from 'prop-types'
 export default class CommonInput extends Component {
   static propTypes = {
     value: PropTypes.any,
-    required: PropTypes.bool,
     onChange: PropTypes.func
   }
 
   static defaultProps = {
     value: '',
-    required: false,
     onChange: () => { }
   }
 
@@ -83,15 +81,12 @@ export default class CommonInput extends Component {
   }
 
   render() {
-    return (
-      <input
-        type="text"
-        required={this.props.required}
-        value={this.state.value}
-        onChange={(e) => this.onChange(e)}
-        pattern={this.pattern?.toString().substr(1, this.pattern.toString().length - 2) ?? '.*'}
-        onInvalid={(e) => this.onInvalid(e)}
-      />
-    )
+    return React.createElement('input', {
+      ...this.props,
+      value: this.state.value,
+      onChange: (e) => this.onChange(e),
+      pattern: this.pattern?.toString().substr(1, this.pattern.toString().length - 2) ?? '.*',
+      onInvalid: (e) => this.onInvalid(e)
+    });
   }
 }
