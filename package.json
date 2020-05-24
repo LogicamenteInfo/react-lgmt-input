@@ -1,6 +1,6 @@
 {
   "name": "@logicamente.info/react-lgmt-input",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Componente React para criação de inputs formatados e validados para dados pré-definidos utilizados no Brasil",
   "main": "lib/index.js",
   "module": "es/index.js",
