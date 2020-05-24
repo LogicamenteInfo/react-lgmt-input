@@ -67,7 +67,7 @@ export default class CommonInput extends Component {
         this.props.onChange(this.state.value);
         el.setSelectionRange(start + offset, end + offset);
         el.setCustomValidity("");
-        if (typeof this.validator === 'function' && !this.validator()) {
+        if (this.state.value.toString().length > 0 && typeof this.validator === 'function' && !this.validator()) {
           el.setCustomValidity(this.invalidMessage || 'O valor informado não é válido');
         }
       }).bind(this, event.target));
