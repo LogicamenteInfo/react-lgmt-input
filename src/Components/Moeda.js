@@ -27,7 +27,8 @@ export default class ContaBancaria extends CommonInput {
         end = event.target.selectionEnd;
       rValue = Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(parseInt(value, 10) / 100);
       const nonDigits = rValue.match(/(\D| )/g);
-      const offset = nonDigits !== null && end === previousValue.length ? nonDigits.length : 0;
+      const allSelected = value.match(/^00\d$/g);
+      const offset = allSelected ? 3 : nonDigits && end === previousValue.length ? nonDigits.length : 0;
       this.setState({ value: rValue }, ((el) => {
         this.props.onChange(this.state.value);
         el.setSelectionRange(start + offset, end + offset);
