@@ -4,7 +4,9 @@ import { render } from 'react-dom'
 import LgmtInput from '../../src'
 
 export default class Demo extends Component {
-  state = {}
+  state = {
+    moeda: '0,00'
+  }
 
   render() {
     return <div>

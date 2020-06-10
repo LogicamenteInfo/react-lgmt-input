@@ -20,10 +20,9 @@ export default class ContaBancaria extends CommonInput {
     let rValue;
     if (event.target && [35, 36, 37, 39].indexOf(o) === -1) {
       const previousValue = event.target.value.toString();
-      console.log(previousValue)
       const value = event.target.value
         .replace(/^0+|\D/g, "")
-        .substring(0, this.length)
+        .padStart(3, '0')
       const start = event.target.selectionStart,
         end = event.target.selectionEnd;
       rValue = Intl.NumberFormat('pt-BR', { minimumFractionDigits: 2 }).format(parseInt(value, 10) / 100);
