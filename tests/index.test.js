@@ -2,7 +2,7 @@ import expect from 'expect'
 import React from 'react'
 import {render, unmountComponentAtNode} from 'react-dom'
 
-import Component from 'src/'
+import LgmtInput from 'src/'
 
 describe('Component', () => {
   let node
@@ -16,8 +16,8 @@ describe('Component', () => {
   })
 
   it('displays a welcome message', () => {
-    render(<Component/>, node, () => {
-      expect(node.innerHTML).toContain('Welcome to React components')
+    render(<LgmtInput.CPF />, node, () => {
+      expect(node.childNodes[0].value).toContain('')
     })
   })
 })
