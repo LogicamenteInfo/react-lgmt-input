@@ -61,16 +61,6 @@ Este componente é um DOM Input padrão do **HTML de texto**, portanto todas as 
 
 Para criar inputs com suas próprias opções e formatos, crie uma classe que extenda `CommonInput` e defina as propriedades conforme tabela a seguir.
 
-| Propriedade | Descrição | Exemplo |
-| :-- | :-- | :-- | :-- |
-| `masksRegex` | Demostra através de expressões regulares a evolução da aplicação da máscara | `/(^(\d)|(\d)(\d)|(\d)(\d)(\d)|(\d)(\d)(\d)(\d)$)/g`{:.js} |
-| `masksReplacement` | Informa como os grupos capturados pelas expressões regulares vão compor a máscara | ["$2", "$4.$5", "$7.$8.$9", "$11.$12.$12-$13"] |
-| `length` | Tamanho máximo permitido para o input *desconsiderando* os caracteres da máscara | 4 |
-| `pattern` | Expressão regular que validará o valor final do input depois de aplicada a máscara | /^(\d\.){3}\d$/ |
-| `invalidMessage` | Mensagem que será exibida caso o valor do input seja inválido utilizando a validação padrão do HTML5 (anterior ao evento `submit`) | "Preencha corretamente." |
-| `validator` | Uma função **opcional** executada durante a validação de `pattern` que avalia o valor do input para determinar sua validade | <pre lang="js">const a = '1'</pre> |
-
-
 <table>
 <tr>
   <th>Propriedade</th>
