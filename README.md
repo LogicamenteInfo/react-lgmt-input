@@ -1,5 +1,8 @@
 # React-Lgmt-Input
 
+[![Travis][build-badge]][build]
+[![npm package][npm-badge]][npm]
+
 Este componente cria inputs mascarados para alguns dados utilizados em cadastros
 aqui no Brasil.
 
@@ -170,3 +173,9 @@ export default class MeuInput extends LgmtInput.CommonInput {
 
 }
 ```
+
+[build-badge]: https://img.shields.io/travis/logicamenteinfo/react-lgmt-input/master.png?style=flat-square
+[build]: https://travis-ci.org/logicamenteinfo/react-lgmt-input
+
+[npm-badge]: https://img.shields.io/npm/v/@logicamente.info/react-lgmt-input.png?style=flat-square
+[npm]: https://www.npmjs.org/@logicamente.info/react-lgmt-input
