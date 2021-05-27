@@ -1,6 +1,6 @@
 {
   "name": "@logicamente.info/react-lgmt-input",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Componente React para criação de inputs formatados e validados para dados pré-definidos utilizados no Brasil",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -23,12 +23,13 @@
     "prop-types": "^15.7.2"
   },
   "peerDependencies": {
-    "react": "16.x"
+    "react": ">16.x"
   },
   "devDependencies": {
+    "inferno": "^7.4.8",
     "nwb": "0.25.x",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "author": "Logicamente Info",
   "homepage": "https://logicamente.info",
