@@ -17,7 +17,7 @@ export default class ContaBancaria extends CommonInput {
   invalidMessage = "Valor informado é inválido.";
 
   loadPattern() {
-    this.pattern = new RegExp(`/^\d+(\.\d{3})*?(,\d{1,${this.props.digits}})?$/`);
+    this.pattern = new RegExp(`^\\d+(\\.\\d{3})*?(,\\d{1,${this.props.digits}})?$`);
   }
 
   onChange(event) {
