@@ -6,6 +6,7 @@ import LgmtInput from "../../src";
 export default class Demo extends Component {
   state = {
     moeda: "0,00",
+    moeda4: "0,0000",
   };
 
   componentDidMount() {
@@ -72,6 +73,18 @@ export default class Demo extends Component {
             onChange={(moeda) => this.setState({ moeda })}
           />
           <p>Você digitou o valor : R$ {this.state.moeda}</p>
+        </form>
+
+        <form>
+          <label>
+            <b>Moeda (4 dígitos)</b>
+          </label>
+          <LgmtInput.Moeda
+            value={this.state.moeda4}
+            onChange={(moeda4) => this.setState({ moeda4 })}
+            digits="4"
+          />
+          <p>Você digitou o valor : R$ {this.state.moeda4}</p>
         </form>
       </div>
     );

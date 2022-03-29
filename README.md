@@ -49,7 +49,7 @@ export default class Demo extends React.Component {
 | `LgmtInput.ConvenioBancario` | Input formatado para números de boletos com 48 dígitos (água, luz, telefone...) |
 | `LgmtInput.CPF` | Input formatado para número de registro de pessoa física |
 | `LgmtInput.Documento` | Input formatado para CPF ou CNPJ, adaptando-se de acordo com a quantidade dígitos inseridos |
-| `LgmtInput.Moeda` | Input formatado para valores monetários, com duas casas decimais |
+| `LgmtInput.Moeda` | Input formatado para valores monetários, com duas casas decimais por padrão (prop `digits="2"`) |
 | `LgmtInput.Telefone` | Input formatado para telefones com DDD |
 
 ## Props
