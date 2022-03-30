@@ -22,6 +22,7 @@ export default class ContaBancaria extends CommonInput {
 
   onChange(event) {
     let o = window.Event ? event.which : event.keyCode;
+    console.log(event, event.nativeEvent)
     let rValue;
     if (event.target && [35, 36, 37, 39].indexOf(o) === -1) {
       this.loadPattern();
@@ -32,9 +33,24 @@ export default class ContaBancaria extends CommonInput {
       const start = event.target.selectionStart,
         end = event.target.selectionEnd;
       rValue = Intl.NumberFormat('pt-BR', { minimumFractionDigits: this.props.digits }).format(parseInt(value, 10) / Math.pow(10, this.props.digits));
-      const nonDigits = rValue.match(/(\D| )/g);
-      const allSelected = value.match(/^00\d$/g);
-      const offset = allSelected ? 3 : nonDigits && end === previousValue.length ? nonDigits.length : 0;
+      let offset = 0;
+      if (event.nativeEvent.data) {
+        if ((value.length - this.props.digits - 1) % 3 === 0) {
+          offset = 1;
+        }
+        if (value.length === this.props.digits + 1) {
+          offset = -1;
+        }
+      }
+      if (!event.nativeEvent.data) {
+        if ((value.length - this.props.digits) % 3 === 0) {
+          offset = -1;
+        }
+        if (previousValue.length === parseInt(this.props.digits) + 1) {
+          offset = 1;
+        }
+      }
+      //const offset = value.length === 3 ? -1 : 0  ; //allSelected ? 3 : nonDigits && end === previousValue.length ? nonDigits.length : 0;
       this.setState({ value: rValue }, ((el) => {
         this.props.onChange(this.state.value);
         el.setSelectionRange(start + offset, end + offset);
