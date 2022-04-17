@@ -16,13 +16,18 @@ export default class ContaBancaria extends CommonInput {
 
   invalidMessage = "Valor informado é inválido.";
 
+  componentDidMount() {
+    super.componentDidMount();
+    this.loadPattern();
+    this.forceUpdate();
+  }
+
   loadPattern() {
     this.pattern = new RegExp(`^\\d+(\\.\\d{3})*?(,\\d{1,${this.props.digits}})?$`);
   }
 
   onChange(event) {
     let o = window.Event ? event.which : event.keyCode;
-    console.log(event, event.nativeEvent)
     let rValue;
     if (event.target && [35, 36, 37, 39].indexOf(o) === -1) {
       this.loadPattern();
